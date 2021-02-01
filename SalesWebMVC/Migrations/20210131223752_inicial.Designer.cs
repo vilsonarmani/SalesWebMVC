@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
-using SalesWebMvc.Data;
+using SalesWebMvc.Models;
 
 namespace SalesWebMvc.Migrations
 {
@@ -20,7 +20,7 @@ namespace SalesWebMvc.Migrations
                 .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("SalesWebMvc.Models.Department.Department", b =>
+            modelBuilder.Entity("Department", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
