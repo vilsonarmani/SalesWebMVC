@@ -7,8 +7,9 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using SalesWebMvc;
 
-namespace SalesWebMVC
+namespace SalesWebMvc
 {
     public class Program
     {
