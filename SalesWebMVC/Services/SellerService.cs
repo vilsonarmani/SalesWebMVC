@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using SalesWebMvc.Services.Exceptions;
 
 namespace SalesWebMvc.Services
 {
-    public class SellerService 
+    public class SellerService
     {
         private readonly SalesWebMvcContext _context;
 
@@ -35,9 +36,28 @@ namespace SalesWebMvc.Services
 
 
         public void Insert(Seller obj)
-        {            
+        {
             _context.Add(obj);
             _context.SaveChanges();
+        }
+
+        public void Update(Seller seller)
+        {
+            //any retorna true se existe no banco de dados o que vc colocar entre parenteses
+            if (!_context.Seller.Any(x => x.Id == seller.Id))
+            {
+                throw new NotFoundException("Id not found");
+            }
+
+            try
+            {
+                _context.Update(seller);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
+            }
         }
     }
 }
