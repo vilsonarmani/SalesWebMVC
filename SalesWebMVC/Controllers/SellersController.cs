@@ -47,6 +47,12 @@ namespace SalesWebMvc.Controllers
 
         public IActionResult Delete(int? id)
         {
+            return Retorna(id);
+
+        }
+
+        private IActionResult Retorna(int? id)
+        {
             if (id == null)
             {
                 return NotFound();
@@ -60,7 +66,6 @@ namespace SalesWebMvc.Controllers
             }
 
             return View(obj);
-
         }
 
         [HttpPost]
@@ -70,6 +75,11 @@ namespace SalesWebMvc.Controllers
             _sellerService.Remove(id);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Details ( int? id)
+        {
+            return Retorna(id);
         }
 
     }
