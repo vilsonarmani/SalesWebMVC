@@ -1,9 +1,7 @@
 ﻿using SalesWebMvc.Models;
 using SalesWebMvc.Models.Enums;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SalesWebMvc.Data
 {
@@ -15,13 +13,12 @@ namespace SalesWebMvc.Data
         {
             _context = context;
         }
-
         public void Seed()
         {
             //Seller ja tem dados
-            if (_context.Department.Any() || 
+            if (_context.Department.Any() ||
                 _context.Seller.Any() ||
-                _context.SalesRecord.Any() )
+                _context.SalesRecord.Any())
             {
                 return;// o banco de dados ja foi populado
             }
@@ -30,7 +27,7 @@ namespace SalesWebMvc.Data
 
             Department department1 = new Department(1, "Computers");
             Department department2 = new Department { Id = 2, Name = "Electronics" };
-            Department department3 = new Department (3, "Fashion");
+            Department department3 = new Department(3, "Fashion");
             Department department4 = new Department(4, "Books");
 
             Seller seller1 = new Seller(1, "Bob Brown", "bob@gmail.com", new DateTime(1998, 4, 21), 1000.0, department1);
@@ -41,7 +38,7 @@ namespace SalesWebMvc.Data
             Seller seller6 = new Seller(6, "Eva &Adão", "bob@gmail.com", new DateTime(1998, 4, 21), 900.0, department3);
             Seller seller7 = new Seller(7, "Mun Ha", "eterno@gmail.com", new DateTime(1985, 4, 21), 850.0, department4);
             Seller seller8 = new Seller(8, "Bob Brown", "bob@gmail.com", new DateTime(1989, 4, 21), 1060.0, department4);
-            Seller seller9 = new Seller(9, "Bob Brown", "bob@gmail.com", new DateTime(2000, 4, 21), 1054.0, department4);
+            Seller seller9 = new Seller(9, "Guilherme Dias", "guilhermedias@gmail.com", new DateTime(2000, 4, 21), 1054.0, department4);
 
             Random rand = new Random();
 
@@ -94,7 +91,7 @@ namespace SalesWebMvc.Data
                 salesRecord34, salesRecord35
              );
 
-            _context.SaveChanges(); 
+            _context.SaveChanges();
         }
     }
 }
