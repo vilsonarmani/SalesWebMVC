@@ -38,7 +38,7 @@ namespace SalesWebMvc.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     Date = table.Column<DateTime>(nullable: false),
-                    Amounth = table.Column<double>(nullable: false),
+                    Amount = table.Column<double>(nullable: false),
                     Status = table.Column<int>(nullable: false),
                     SellerId = table.Column<int>(nullable: true)
                 },

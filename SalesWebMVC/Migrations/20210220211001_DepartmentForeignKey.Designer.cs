@@ -38,7 +38,7 @@ namespace SalesWebMvc.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<double>("Amounth");
+                    b.Property<double>("Amount");
 
                     b.Property<DateTime>("Date");
 
